@@ -1,0 +1,350 @@
+
+D:\workspace\app>mvn test
+[INFO] Scanning for projects...
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for com.mitocode:mitocode-calculator:jar:0.0.1-SNAPSHOT
+[WARNING] The expression ${artifactId} is deprecated. Please use ${project.artifactId} instead.
+[WARNING]
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING]
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING]
+[INFO]
+[INFO] ------------------< com.mitocode:mitocode-calculator >------------------
+[INFO] Building mitocode-calculator 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ mitocode-calculator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ mitocode-calculator ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ mitocode-calculator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ mitocode-calculator ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ mitocode-calculator ---
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.mitocode.calculator.SimpleCalculatorControllerTest
+13:55:18.907 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.mitocode.calculator.SimpleCalculatorControllerTest]
+13:55:18.911 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+13:55:18.917 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class
+,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+13:55:18.951 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.mitocode.calculator.SimpleCalculatorControllerTest] from class [org.springframe
+work.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper]
+13:55:18.964 [main] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.mitocode.calculator.Si
+mpleCalculatorControllerTest], using SpringBootContextLoader
+13:55:18.967 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.mitocode.calculator.SimpleCalculatorControllerTest]: class pa
+th resource [com/mitocode/calculator/SimpleCalculatorControllerTest-context.xml] does not exist
+13:55:18.968 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.mitocode.calculator.SimpleCalculatorControllerTest]: class pa
+th resource [com/mitocode/calculator/SimpleCalculatorControllerTestContext.groovy] does not exist
+13:55:18.968 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.mitocode.calculator.SimpleCalculatorControllerTest]: no res
+ource found for suffixes {-context.xml, Context.groovy}.
+13:55:18.968 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mitocode.calculator.SimpleCalculatorControl
+lerTest]: SimpleCalculatorControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:55:19.022 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and cla
+ss [com.mitocode.calculator.SimpleCalculatorControllerTest]
+13:55:19.073 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\workspace\app\target\classes\com\mitocode\calculator\Si
+mpleCalculatorApplication.class]
+13:55:19.087 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mitocode.calculator.SimpleCalculatorApplication for test class com.mitocode.cal
+culator.SimpleCalculatorControllerTest
+13:55:19.088 [main] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - @TestExecutionListeners is not present for class [com.mitocode.calculator.SimpleCalculatorControlle
+rTest]: using defaults.
+13:55:19.089 [main] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.spr
+ingframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecut
+ionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionLi
+stener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesCo
+ntextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springfra
+mework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListene
+r]
+13:55:19.097 [main] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.Transactiona
+lTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transactio
+n/interceptor/TransactionAttributeSource]
+13:55:19.097 [main] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecu
+tionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/intercep
+tor/TransactionAttribute]
+13:55:19.097 [main] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@342
+7b02d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@647e447, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@41fbdac4, org.springframework.boot.te
+st.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3c407114, org.springframework.test.context.support.DirtiesContextTestExecutionListener@35ef1869, org.springframework.test.context.event.EventPubl
+ishingTestExecutionListener@c33b74f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@130161f7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2c767a52
+, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@619713e5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionList
+ener@708f5957, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@68999068]
+13:55:19.099 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.mitocode.calculator.SimpleCalculatorControllerTest]
+13:55:19.099 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.mitocode.calc
+ulator.SimpleCalculatorControllerTest]
+13:55:19.100 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.mitocode.calculator.SimpleCalculatorControllerTest]
+13:55:19.100 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.mitocode.calc
+ulator.SimpleCalculatorControllerTest]
+13:55:19.100 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.mitocode.calculator.SimpleCalculatorControllerTest]
+13:55:19.101 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.mitocode.calc
+ulator.SimpleCalculatorControllerTest]
+13:55:19.103 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@59fd97a8 testClass = SimpleCalculatorControllerTest,
+testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@f5ac9e4 testClass = SimpleCalculatorControllerTest, locations = '{}', classes = '{cla
+ss com.mitocode.calculator.SimpleCalculatorApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autocon
+figure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@123ef382 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.
+boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfigurat
+ion, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.Hyperm
+ediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconf
+igure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.a
+utoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration,
+ org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servle
+t.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, or
+g.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.cont
+ext.filter.ExcludeFilterContextCustomizer@16267862, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@442675e1, org.springframework.boot.test.mock.
+mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@58fdd99, org.springframework.boot.test.au
+toconfigure.filter.TypeExcludeFiltersContextCustomizer@210b8942, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f614679b, org.springframework.boot.test.autoconfigure.web.se
+rvlet.WebDriverContextCustomizerFactory$Customizer@341b80b2], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = m
+ap[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+13:55:19.105 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.mitocode.calculator.SimpleCalculatorControllerTest]
+13:55:19.105 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.mitocode.calc
+ulator.SimpleCalculatorControllerTest]
+13:55:19.108 [main] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@59fd97a8 testClass = SimpleCalcul
+atorControllerTest, testInstance = com.mitocode.calculator.SimpleCalculatorControllerTest@5ffead27, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@f5ac9e4
+testClass = SimpleCalculatorControllerTest, locations = '{}', classes = '{class com.mitocode.calculator.SimpleCalculatorApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocatio
+ns = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@123ef382 key = [org.springfr
+amework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguratio
+n, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson
+.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.auto
+configure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.
+autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.sp
+ringframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.Moc
+kMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.spri
+ngframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.w
+eb.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@16267862, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$Dupli
+cateJsonObjectContextCustomizer@442675e1, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$Disabl
+eAutoConfigurationContextCustomizer@58fdd99, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@210b8942, org.springframework.boot.test.autoconfigure.properties.PropertyMappingC
+ontextCustomizer@f614679b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@341b80b2], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework
+.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]].
+13:55:19.203 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.autoconfigure.web.ser
+vlet.WebMvcTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.4.RELEASE)
+
+2020-03-03 13:55:19.467  INFO 32764 --- [           main] c.m.c.SimpleCalculatorControllerTest     : Starting SimpleCalculatorControllerTest on PC-MJ07GD3T with PID 32764 (started by jose.guerreror in D:\workspace
+\app)
+2020-03-03 13:55:19.470  INFO 32764 --- [           main] c.m.c.SimpleCalculatorControllerTest     : No active profile set, falling back to default profiles: default
+2020-03-03 13:55:20.838  WARN 32764 --- [           main] uration$JodaDateTimeJacksonConfiguration : Auto-configuration of Jackson's Joda-Time integration is deprecated in favor of using java.time (JSR-310).
+2020-03-03 13:55:20.909  INFO 32764 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-03 13:55:20.972  INFO 32764 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-03-03 13:55:21.088  INFO 32764 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-03-03 13:55:21.089  INFO 32764 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-03-03 13:55:21.106  INFO 32764 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 17 ms
+2020-03-03 13:55:21.128  INFO 32764 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-03-03 13:55:21.154  INFO 32764 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-03-03 13:55:21.162  INFO 32764 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-03-03 13:55:21.355  INFO 32764 --- [           main] c.m.c.SimpleCalculatorControllerTest     : Started SimpleCalculatorControllerTest in 2.145 seconds (JVM running for 2.856)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/div/90/18/
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.mitocode.calculator.SimpleCalculatorController
+           Method = com.mitocode.calculator.SimpleCalculatorController#div(Integer, Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"text/plain;charset=UTF-8", Content-Length:"11"]
+     Content type = text/plain;charset=UTF-8
+             Body = 90 / 18 = 5
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/mul/15/154/
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.mitocode.calculator.SimpleCalculatorController
+           Method = com.mitocode.calculator.SimpleCalculatorController#mul(Integer, Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"text/plain;charset=UTF-8", Content-Length:"15"]
+     Content type = text/plain;charset=UTF-8
+             Body = 15 x 154 = 2310
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/sub/100/17/
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.mitocode.calculator.SimpleCalculatorController
+           Method = com.mitocode.calculator.SimpleCalculatorController#sub(Integer, Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"text/plain;charset=UTF-8", Content-Length:"13"]
+     Content type = text/plain;charset=UTF-8
+             Body = 100 - 17 = 83
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/add/12/23/
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.mitocode.calculator.SimpleCalculatorController
+           Method = com.mitocode.calculator.SimpleCalculatorController#add(Integer, Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"text/plain;charset=UTF-8", Content-Length:"12"]
+     Content type = text/plain;charset=UTF-8
+             Body = 12 + 23 = 35
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/whoami/
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.mitocode.calculator.SimpleCalculatorController
+           Method = com.mitocode.calculator.SimpleCalculatorController#whoami()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"text/plain;charset=UTF-8", Content-Length:"19"]
+     Content type = text/plain;charset=UTF-8
+             Body = Hi GRACIAS.MITOCODE
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.068 s - in com.mitocode.calculator.SimpleCalculatorControllerTest
+2020-03-03 13:55:21.861  INFO 32764 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.924 s
+[INFO] Finished at: 2020-03-03T13:55:22-05:00
+[INFO] ------------------------------------------------------------------------
+
+
