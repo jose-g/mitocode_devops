@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "a4592539-a884-4666-98fd-d071d640a5b9",
+		"name": "calculator-api_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Collection",
+			"item": [
+				{
+					"name": "whoami",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strCampo1\" : \"SIPGE13\",\n\t\"strCampo2\" : \"123456789\"\n}"
+						},
+						"url": {
+							"raw": "10.4.16.91:8090/api/whoami/",
+							"host": [
+								"10.4.16.91"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"whoami",
+								""
+							]
+						},
+						"description": "fetch whoami "
+					},
+					"response": []
+				},
+				{
+					"name": "add operation",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strCampo1\" : \"SIPGE13\",\n\t\"strCampo2\" : \"123456789\"\n}"
+						},
+						"url": {
+							"raw": "10.4.16.91:8090/api/add/56/34",
+							"host": [
+								"10.4.16.91"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"add",
+								"56",
+								"34"
+							]
+						},
+						"description": "fetch sum operation"
+					},
+					"response": []
+				},
+				{
+					"name": "sub operation",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strCampo1\" : \"SIPGE13\",\n\t\"strCampo2\" : \"123456789\"\n}"
+						},
+						"url": {
+							"raw": "10.4.16.91:8090/api/sub/100/25",
+							"host": [
+								"10.4.16.91"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"sub",
+								"100",
+								"25"
+							]
+						},
+						"description": "fetch subtraction operation"
+					},
+					"response": []
+				},
+				{
+					"name": "mul operation",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strCampo1\" : \"SIPGE13\",\n\t\"strCampo2\" : \"123456789\"\n}"
+						},
+						"url": {
+							"raw": "10.4.16.91:8090/api/mul/3/13",
+							"host": [
+								"10.4.16.91"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"mul",
+								"3",
+								"13"
+							]
+						},
+						"description": "fetch multiplication operation"
+					},
+					"response": []
+				},
+				{
+					"name": "div operation",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strCampo1\" : \"SIPGE13\",\n\t\"strCampo2\" : \"123456789\"\n}"
+						},
+						"url": {
+							"raw": "10.4.16.91:8090/api/div/85/17",
+							"host": [
+								"10.4.16.91"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"div",
+								"85",
+								"17"
+							]
+						},
+						"description": "fetch division operation"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
