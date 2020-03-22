@@ -4,7 +4,7 @@ services:
   postman_checks:
     image: postman/newman:ubuntu
     networks:
-     - apinet    
+     - minet    
     container_name: restful_calculator_checks
     command : 
        run calculator-api_Collection.postman_collection.json    
@@ -12,5 +12,5 @@ services:
       - ./postman:/etc/newman
                          
 networks:
-  apinet:
-    external: true
+  minet:
+    driver: bridge    

@@ -5,10 +5,11 @@ services:
     image: {{API_DOCKER_IMAGE}}
     restart: always
     networks:
-     - apinet
+     - minet
+    container_name: api_calculator
     ports :
       - 8090:8080
                
 networks:
-  apinet:
-    external: true
+  minet:
+    driver: bridge      
