@@ -11,6 +11,7 @@ services:
       
   postman_checks:
     image: postman/newman:ubuntu
+    restart: always
     networks:
      - apinet
     container_name: restful_calculator_checks

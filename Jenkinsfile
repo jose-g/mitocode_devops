@@ -26,7 +26,7 @@ pipeline{
 				echo "Generate docker-compose file"
 				sh "sed -i 's@{{API_DOCKER_IMAGE}}@${apiVersion}@g' docker-compose.dist"
 				sh "cat docker-compose.dist"
-				sh "docker-compose -f docker-compose.dist up -d"
+				sh "docker-compose -f docker-compose.dist up"
 				sh "sleep 5"
 				sh "docker-compose -f docker-compose.dist ps"
 			}
