@@ -27,18 +27,26 @@ pipeline{
 				sh "sed -i 's@{{API_DOCKER_IMAGE}}@${apiVersion}@g' docker-compose.dist"
 				sh "cat docker-compose.dist"
 				sh "docker-compose -f docker-compose.dist up -d"
-				sh "sleep 5"
+				sh "sleep 20"
 				sh "docker-compose -f docker-compose.dist ps"
 			}
 		}
 		stage('Setup postman compose environment'){
 			steps{
 			    echo "executing docker postman compose"
-				sh "docker-compose -f postman-compose.dist up"
+				sh "docker-compose -f postman-compose.dist up -d"
 				sh "sleep 5"
 				sh "docker-compose -f postman-compose.dist ps"
 			}
 		}
+		stage('Restart postman compose environment'){
+			steps{
+				sh "docker-compose -f postman-compose.dist down"
+				sh "sleep 5"
+				sh "docker-compose -f postman-compose.dist up"
+				sh "sleep 10"
+			}
+		}		
 	}
 }
 
