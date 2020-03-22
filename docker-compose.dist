@@ -4,22 +4,22 @@ services:
   api:
     image: {{API_DOCKER_IMAGE}}
     restart: always
-    networks:
-     - apinet
+#    networks:
+#     - apinet
     ports :
       - 8090:8080
       
   postman_checks:
     image: postman/newman:ubuntu
     restart: always
-    networks:
-     - apinet
+#    networks:
+#     - apinet
     container_name: restful_calculator_checks
     command : 
        run calculator-api_Collection.postman_collection.json    
     volumes:
       - ./postman:/etc/newman
                
-networks:
-  apinet:
-    driver: bridge      
+#networks:
+#  apinet:
+#    driver: bridge      
