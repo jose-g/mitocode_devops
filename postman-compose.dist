@@ -13,4 +13,4 @@ services:
                          
 networks:
   apinet:
-    driver: bridge    
+    external: true
