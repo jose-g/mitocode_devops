@@ -5,4 +5,4 @@ services:
     image: {{API_DOCKER_IMAGE}}
     restart: always
     ports :
-      - 8090:8090
+      - 8090:8080
