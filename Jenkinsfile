@@ -12,7 +12,7 @@ pipeline{
 			steps{
 				echo "Getting api version with maven"
 				echo "Before ${backendVersion}"
-				sh 'mvn help:evaluate -Dexpression=project.version -q DforceStdout > backend.txt'
+				sh 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout > backend.txt'
 				script {
 					backendVersion = "${CONTAINER_API_LABEL}:" + readFile('backend.txt').trim() + "-" + env.BUILD_NUMBER
 				}
