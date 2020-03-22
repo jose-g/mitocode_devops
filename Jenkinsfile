@@ -36,7 +36,7 @@ pipeline{
 			steps{
 				sh "sed -i 's@{{internalIp}}@${MI_INTERNAL_IP}@g' ./postman/calculator-api_Collection.postman_collection.json"
 			    echo "executing docker postman compose"
-				sh "docker-compose -f --remove-orphans postman-compose.dist up"
+				sh "docker-compose -f postman-compose.dist up"
 				sh "sleep 5"
 				sh "docker-compose -f postman-compose.dist ps"
 			}
