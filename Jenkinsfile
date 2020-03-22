@@ -31,6 +31,14 @@ pipeline{
 				sh "docker-compose -f docker-compose.dist ps"
 			}
 		}
+		stage('Setup postman compose environment'){
+			steps{
+			    echo "executing docker postman compose"
+				sh "docker-compose -f postman-compose.dist up"
+				sh "sleep 5"
+				sh "docker-compose -f postman-compose.dist ps"
+			}
+		}
 	}
 }
 
