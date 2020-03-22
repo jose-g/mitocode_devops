@@ -1,0 +1,234 @@
+Started by user José Atilio Guerrero Romero
+Obtained Jenkinsfile from git https://github.com/jose-g/mitocode_devops.git
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/pipeline-postman
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/jose-g/mitocode_devops.git # timeout=10
+Fetching upstream changes from https://github.com/jose-g/mitocode_devops.git
+ > git --version # timeout=10
+ > git fetch --tags --force --progress -- https://github.com/jose-g/mitocode_devops.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 06de2af4c5de02f49dd92ccde0054891a78dfebf (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 06de2af4c5de02f49dd92ccde0054891a78dfebf # timeout=10
+Commit message: "fix: set time sleep primer pipeline #025"
+ > git rev-list --no-walk 4486ac47e7194fa0b17f146e3a64fe71a97aa94a # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Prepare api version)
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/pipeline-postman@2
+[Pipeline] {
+[Pipeline] checkout
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/jose-g/mitocode_devops.git # timeout=10
+Fetching upstream changes from https://github.com/jose-g/mitocode_devops.git
+ > git --version # timeout=10
+ > git fetch --tags --force --progress -- https://github.com/jose-g/mitocode_devops.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 06de2af4c5de02f49dd92ccde0054891a78dfebf (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 06de2af4c5de02f49dd92ccde0054891a78dfebf # timeout=10
+Commit message: "fix: set time sleep primer pipeline #025"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ docker inspect -f . maven:3.6.3-jdk-11-slim
+.
+[Pipeline] withDockerContainer
+Jenkins does not seem to be running inside a container
+$ docker run -t -d -u 996:992 -w /var/lib/jenkins/workspace/pipeline-postman@2 -v /var/lib/jenkins/workspace/pipeline-postman@2:/var/lib/jenkins/workspace/pipeline-postman@2:rw,z -v /var/lib/jenkins/workspace/pipeline-postman@2@tmp:/var/lib/jenkins/workspace/pipeline-postman@2@tmp:rw,z -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** maven:3.6.3-jdk-11-slim cat
+$ docker top af5b688c6a47544d564c8b17a1f3d96660e56cd7b6192b8313f451c7e5504505 -eo pid,comm
+[Pipeline] {
+[Pipeline] echo
+Getting api version with maven
+[Pipeline] echo
+Before 0.0.0
+[Pipeline] sh
++ mvn help:evaluate -Dexpression=project.version -q -DforceStdout
+[Pipeline] script
+[Pipeline] {
+[Pipeline] readFile
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] echo
+After jguerrero/calculator-api:0.0.1-SNAPSHOT-25
+[Pipeline] }
+$ docker stop --time=1 af5b688c6a47544d564c8b17a1f3d96660e56cd7b6192b8313f451c7e5504505
+$ docker rm -f af5b688c6a47544d564c8b17a1f3d96660e56cd7b6192b8313f451c7e5504505
+[Pipeline] // withDockerContainer
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Setup compose environment)
+[Pipeline] echo
+Building api image jguerrero/calculator-api:0.0.1-SNAPSHOT-25
+[Pipeline] sh
++ docker build -t jguerrero/calculator-api:0.0.1-SNAPSHOT-25 .
+Sending build context to Docker daemon  4.588MB
+
+Step 1/12 : FROM maven:3.6.3-jdk-8-slim AS builder
+ ---> 7bc083b77836
+Step 2/12 : WORKDIR /app
+ ---> Using cache
+ ---> 683f9b7ff356
+Step 3/12 : COPY pom.xml .
+ ---> Using cache
+ ---> af8724d7ed1a
+Step 4/12 : RUN mvn -B -e -C -T 1C org.apache.maven.plugins:maven-dependency-plugin:3.0.2:go-offline
+ ---> Using cache
+ ---> 475e3bd4807a
+Step 5/12 : COPY src ./src
+ ---> Using cache
+ ---> 4f4dafe8e7d4
+Step 6/12 : RUN ls -la ./src
+ ---> Using cache
+ ---> 09fc1ce1ba02
+Step 7/12 : RUN mvn clean package -Dmaven.test.skip=true
+ ---> Using cache
+ ---> 6b3dc1c52c20
+Step 8/12 : FROM openjdk:8u242-jdk-slim
+ ---> f1f4a3dcefbd
+Step 9/12 : LABEL maintainer="jose.guerreror@inpe.gob.pe"
+ ---> Using cache
+ ---> f1f2f6214b08
+Step 10/12 : WORKDIR /workspace
+ ---> Using cache
+ ---> 0ecee9e156da
+Step 11/12 : COPY --from=builder /app/target/mitocode-calculator.jar app.jar
+ ---> Using cache
+ ---> 8ad2e2b053d8
+Step 12/12 : ENTRYPOINT exec java -jar /workspace/app.jar
+ ---> Using cache
+ ---> 8ec858548c9b
+Successfully built 8ec858548c9b
+Successfully tagged jguerrero/calculator-api:0.0.1-SNAPSHOT-25
+[Pipeline] echo
+Generate docker-compose file
+[Pipeline] sh
++ sed -i 's@{{API_DOCKER_IMAGE}}@jguerrero/calculator-api:0.0.1-SNAPSHOT-25@g' docker-compose.dist
+[Pipeline] sh
++ cat docker-compose.dist
+version: '3.7'
+
+services:
+  api:
+    image: jguerrero/calculator-api:0.0.1-SNAPSHOT-25
+    restart: always
+    networks:
+     - minet
+    container_name: api_calculator
+    ports :
+      - 8090:8080
+               
+networks:
+  minet:
+    driver: bridge      
+[Pipeline] sh
++ docker-compose -f docker-compose.dist up -d
+Creating api_calculator ... 
+[1A[2K
+Creating api_calculator ... [32mdone[0m
+[1B
+[Pipeline] sh
++ sleep 20
+[Pipeline] sh
++ docker-compose -f docker-compose.dist ps
+     Name                   Command               State           Ports         
+--------------------------------------------------------------------------------
+api_calculator   /bin/sh -c exec java -jar  ...   Up      0.0.0.0:8090->8080/tcp
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Setup postman compose environment)
+[Pipeline] sh
++ sed -i 's@{{internalIp}}@172.31.9.89@g' ./postman/calculator-api_Collection.postman_collection.json
+[Pipeline] echo
+executing docker postman compose
+[Pipeline] sh
++ docker-compose -f postman-compose.dist up
+Found orphan containers (api_calculator) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.
+Creating restful_calculator_checks ... 
+[1A[2K
+Creating restful_calculator_checks ... [32mdone[0m
+[1BAttaching to restful_calculator_checks
+[36mrestful_calculator_checks |[0m newman
+[36mrestful_calculator_checks |[0m 
+[36mrestful_calculator_checks |[0m calculator-api_Collection
+[36mrestful_calculator_checks |[0m 
+[36mrestful_calculator_checks |[0m ❏ GET Collection
+[36mrestful_calculator_checks |[0m ↳ whoami
+[36mrestful_calculator_checks |[0m   GET 172.31.9.89:8090/api/whoami/ [200 OK, 268B, 327ms]
+[36mrestful_calculator_checks |[0m 
+[36mrestful_calculator_checks |[0m ↳ add operation
+[36mrestful_calculator_checks |[0m   GET 172.31.9.89:8090/api/add/56/34 [200 OK, 265B, 29ms]
+[36mrestful_calculator_checks |[0m 
+[36mrestful_calculator_checks |[0m ↳ sub operation
+[36mrestful_calculator_checks |[0m   GET 172.31.9.89:8090/api/sub/100/25 [200 OK, 266B, 9ms]
+[36mrestful_calculator_checks |[0m 
+[36mrestful_calculator_checks |[0m ↳ mul operation
+[36mrestful_calculator_checks |[0m   GET 172.31.9.89:8090/api/mul/3/13 [200 OK, 264B, 7ms]
+[36mrestful_calculator_checks |[0m 
+[36mrestful_calculator_checks |[0m ↳ div operation
+[36mrestful_calculator_checks |[0m   GET 172.31.9.89:8090/api/div/85/17 [200 OK, 264B, 6ms]
+[36mrestful_calculator_checks |[0m 
+[36mrestful_calculator_checks |[0m ┌─────────────────────────┬───────────────────┬───────────────────┐
+[36mrestful_calculator_checks |[0m │                         │          executed │            failed │
+[36mrestful_calculator_checks |[0m ├─────────────────────────┼───────────────────┼───────────────────┤
+[36mrestful_calculator_checks |[0m │              iterations │                 1 │                 0 │
+[36mrestful_calculator_checks |[0m ├─────────────────────────┼───────────────────┼───────────────────┤
+[36mrestful_calculator_checks |[0m │                requests │                 5 │                 0 │
+[36mrestful_calculator_checks |[0m ├─────────────────────────┼───────────────────┼───────────────────┤
+[36mrestful_calculator_checks |[0m │            test-scripts │                 0 │                 0 │
+[36mrestful_calculator_checks |[0m ├─────────────────────────┼───────────────────┼───────────────────┤
+[36mrestful_calculator_checks |[0m │      prerequest-scripts │                 0 │                 0 │
+[36mrestful_calculator_checks |[0m ├─────────────────────────┼───────────────────┼───────────────────┤
+[36mrestful_calculator_checks |[0m │              assertions │                 0 │                 0 │
+[36mrestful_calculator_checks |[0m ├─────────────────────────┴───────────────────┴───────────────────┤
+[36mrestful_calculator_checks |[0m │ total run duration: 458ms                                       │
+[36mrestful_calculator_checks |[0m ├─────────────────────────────────────────────────────────────────┤
+[36mrestful_calculator_checks |[0m │ total data received: 62B (approx)                               │
+[36mrestful_calculator_checks |[0m ├─────────────────────────────────────────────────────────────────┤
+[36mrestful_calculator_checks |[0m │ average response time: 75ms [min: 6ms, max: 327ms, s.d.: 125ms] │
+[36mrestful_calculator_checks |[0m └─────────────────────────────────────────────────────────────────┘
+[36mrestful_calculator_checks exited with code 0
+[0m
+[Pipeline] sh
++ sleep 5
+[Pipeline] sh
++ docker-compose -f postman-compose.dist ps
+          Name                         Command               State    Ports
+---------------------------------------------------------------------------
+restful_calculator_checks   newman run calculator-api_ ...   Exit 0        
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
