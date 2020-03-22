@@ -3,6 +3,7 @@ pipeline{
 	agent any
 	environment{
 		CONTAINER_API_LABEL = "${params.CONTAINER_API_LABEL}"
+		MI_INTERNAL_IP = "${params.MI_INTERNAL_IP}"
 	}
 	stages{
 		stage('Prepare api version'){
@@ -33,8 +34,9 @@ pipeline{
 		}
 		stage('Setup postman compose environment'){
 			steps{
+				sh "sed -i 's@{{internalIp}}@${MI_INTERNAL_IP}@g' ./postman/calculator-api_Collection.postman_collection.json"
 			    echo "executing docker postman compose"
-				sh "docker-compose -f postman-compose.dist up"
+				sh "docker-compose -f --remove-orphans postman-compose.dist up"
 				sh "sleep 5"
 				sh "docker-compose -f postman-compose.dist ps"
 			}
