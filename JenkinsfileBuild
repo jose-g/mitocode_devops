@@ -24,10 +24,6 @@ pipeline{
 			steps{
 				echo "Building api image ${apiVersion}"
 				sh "docker build -t ${apiVersion} ."
-#				withCredentials([usernamePassword( CredentialsId: 'dockerhub', usernameVariable: 'francogabo2014' , passwordVariable: 'francogabo2014')]){
-#				     sh "docker login -u ${USERNAME} -p ${PASSWORD}"
-#				     sh "docker push ${apiVersion}"
-#				}
 			}
 		}
 	}
