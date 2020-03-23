@@ -29,7 +29,7 @@ pipeline{
 		stage('Publishing api image'){
 			steps{
 				echo "Publishing api image ${apiVersion}"
-				withCredentials([usernamePassword( credentialsId: 'dockerhub', usernameVariable: 'francogabo2014' , passwordVariable: 'francogabo2014')]){
+				withCredentials([usernamePassword( credentialsId: 'dockerhub', usernameVariable: 'USERNAME' , passwordVariable: 'PASSWORD')]){
 				     sh "docker login -u ${USERNAME} -p ${PASSWORD}"
 				     sh "docker push ${apiVersion}"
 				}
