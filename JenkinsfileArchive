@@ -24,7 +24,7 @@ pipeline{
 				echo "Building api image ${apiVersion}"
 				sh "docker build -t ${apiVersion} ."
 				sh "sleep 20"
-				sh "docker run --name miapi -d -u root docker-image:${apiVersion}"
+				sh "docker run --name miapi -d -u root ${apiVersion}"
 				sh "docker cp miapi:/workspace/app.jar ."
 				sh "sleep 10"
 				sh "docker rm -f miapi"
