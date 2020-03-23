@@ -35,6 +35,7 @@ pipeline{
 	post{
 	   always{
 	      echo "delete images"
+	      sh "docker system prune --force --all"
 	   }
 	   success{
 	      echo "success"
