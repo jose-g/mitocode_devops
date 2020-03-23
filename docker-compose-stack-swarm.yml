@@ -1,0 +1,13 @@
+version: "3"
+services:
+  api:
+    image: francogabo2014/calculator-api-repo:0.0.1-SNAPSHOT-14
+    deploy:
+      replicas: 1
+    ports:
+      - 8080:8080
+    networks:
+      - api-tier
+
+networks:
+  api-tier:
