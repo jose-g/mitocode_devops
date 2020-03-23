@@ -17,6 +17,17 @@ pipeline{
 					apiVersion = "${CONTAINER_API_LABEL}:" + readFile('api.txt').trim() + "-" + env.BUILD_NUMBER
 				}
 				echo "After ${apiVersion}"
+				sh "sleep 20"
+			}
+		}
+		stage('Building image'){
+			steps{
+				echo "Building api image ${apiVersion}"
+				sh "docker build -t ${apiVersion} ."
+#				withCredentials([usernamePassword( CredentialsId: 'dockerhub', usernameVariable: 'francogabo2014' , passwordVariable: 'francogabo2014')]){
+#				     sh "docker login -u ${USERNAME} -p ${PASSWORD}"
+#				     sh "docker push ${apiVersion}"
+#				}
 			}
 		}
 	}
