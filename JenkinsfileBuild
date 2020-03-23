@@ -39,7 +39,7 @@ pipeline{
 	post{
 	   always{
 	      echo "delete images"
-	      sh "docker rmi -f $(sudo docker images)"
+	      sh "docker system prune"
 	   }
 	   success{
 	      echo "success"
