@@ -36,6 +36,18 @@ pipeline{
 			}
 		}
 	}
+	post{
+	   always{
+	      echo "delete images"
+	      sh "docker rmi -f $(sudo docker images)"
+	   }
+	   success{
+	      echo "success"
+	   }
+	   failure{
+	      echo "failure"
+	   }
+	}
 }
 
 
