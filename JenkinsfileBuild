@@ -1,0 +1,50 @@
+pipeline{
+	agent any
+	environment{
+		CONTAINER_API_LABEL = "${params.CONTAINER_API_LABEL}"
+	}
+	stages{
+		stage('Prepare api version'){
+			agent{
+				docker {image 'maven:3.6.3-jdk-11-slim'}
+			}
+			steps{
+				echo "Getting api version with maven"
+				echo "Before ${apiVersion}"
+				sh 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout > api.txt'
+				script {
+					apiVersion = "${CONTAINER_API_LABEL}:" + readFile('api.txt').trim() + "-" + env.BUILD_NUMBER
+				}
+				echo "After ${apiVersion}"
+			}
+		}
+		stage('Setup compose environment'){
+			steps{
+				echo "Building api image ${apiVersion}"
+				sh "docker build -t ${apiVersion} ."
+				withCredentials([usernamePassword( CredentialsId: 'dockerhub', usernameVariable: 'francogabo2014' , passwordVariable: 'francogabo2014')]){
+				     sh "docker login -u ${USERNAME} -p ${PASSWORD}"
+				     sh "docker push ${apiVersion}"
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
