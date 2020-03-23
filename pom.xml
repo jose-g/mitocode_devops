@@ -15,8 +15,8 @@
 		</parent>
 
 		<properties>
-				<maven.compiler.source>1.8</maven.compiler.source>
-				<maven.compiler.target>1.8</maven.compiler.target>
+				<maven.compiler.source>11</maven.compiler.source>
+				<maven.compiler.target>11</maven.compiler.target>
 				<swagger.version>1.5.9</swagger.version>
 				<springfox.version>2.5.0</springfox.version>
 		</properties>
@@ -65,8 +65,8 @@
 								<groupId>org.apache.maven.plugins</groupId>
 								<artifactId>maven-compiler-plugin</artifactId>
 								<configuration>
-										<source>1.8</source>
-										<target>1.8</target>
+										<source>11</source>
+										<target>11</target>
 								</configuration>
 						</plugin>
 						<!-- TODO add fabric8 plugins-->
